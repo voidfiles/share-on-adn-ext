@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Share on ADN options</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      header {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      footer {
+        height: 60px;
+        background-color: #f5f5f5;
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 60px;
+      }
+      .hidden {
+        display:none;
+      }
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -60px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+      #actions-time {
+        position: relative;
+        left: 190px;
+        bottom: 30px;
+      }
+      #auto-dismiss-time {
+        position: relative;
+        left: 260px;
+        bottom: 30px;
+      }
+    </style>
+
+
+  </head>
+
+
+  <body>
+    <div id="wrap">
+      <div class="container">
+
+
+        <header>
+          <h1>Share on ADN <small>a tool to help you collect pieces of the web to your App.net file storage</small></h1>
+        </header>
+
+
+        <div id="content">
+
+
+          <div class="row" id="features">
+            <h2>Features</h2>
+            <ul>
+              <li>Post from the omnibox by typing <i>"adn" &lt;space&gt; "msg" &lt;enter&gt;</i></li>
+              <li>Post to ADN buttons on Twitter share intents</li>
+              <li>View profiles from the omnibox by typing <i>"adn" &lt;space&gt; "name" &lt;down&gt; &lt;down&gt; &lt;enter&gt;</i></li>
+              <li>View #hashtag posts from the omnibox by typing <i>"adn" &lt;space&gt; "hashtag" &lt;down&gt; &lt;down&gt; &lt;down&gt; &lt;enter&gt;</i></li>
+            </ul>
+          </div>
+
+
+          <div class="row offset4" id="loader">
+            <img src="/img/loader.gif" />
+          </div>
+
+
+          <div class="row hidden" id="accounts">
+            <h3>Accounts <small>Add or remove accounts</small></h3>
+
+
+            <div class="row hidden offset2" id="accounts-add">
+              <a target="_blank" class="btn btn-success btn-small start-auth" id="account-btn"><i class="icon-user icon-white"></i> Connect App.net account</a>
+            </div>
+
+
+            <div class="row hidden offset2" id="accounts-list">
+              List of accounts
+            </div>
+          </div>
+
+
+          <br>
+
+
+          <div class="row hidden" id='options'>
+            <h3>Options <small>The finer things in life</small></h3>
+            <div class="form-horizontal">
+              <!-- frequency -->
+              <div class="control-group">
+                <!-- <label class="control-label" for="frequency">Frequency</label> -->
+                <div class="controls">
+                  <label class="checkbox">
+                    <input type="checkbox" id="actions" data-name="actions" checked> Check for new stuff every
+                  </label>
+                  <div id='actions-time'>
+                    <input value="15" type="number" class="span1" id="frequency" data-name="frequency" min="1" max="900" required> seconds
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- dismiss -->
+              <div class="control-group">
+                <!-- <label class="control-label" for="auto-dismiss">Auto-dismiss</label> -->
+                <div class="controls">
+                  <label class="checkbox">
+                    <input type="checkbox" id="auto-dismiss" data-name="autoDismiss" checked> Automatically hide notifications after
+                  </label>
+                  <div id="auto-dismiss-time">
+                    <input value="10" type="number" class="span1" id="auto-dismiss-delay" data-name="autoDismissDelay" min="5" max="60" required> seconds
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- actions -->
+              <div class="control-group">
+                <!-- <label class="control-label" for="actions">Actions</label> -->
+                <div class="controls">
+                  <label class="checkbox">
+                    <input type="checkbox" id="actions-mention" data-name="actionsMention" checked> Notify of posts mentioning me
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox" id="actions-follow" data-name="actionsFollow" checked> Notify of my new followers
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox" id="actions-repost" data-name="actionsRepost" checked> Notify of reposts of my content
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox" id="actions-star" data-name="actionsStar" checked> Notify of stars of my content
+                  </label>
+                  <label class="checkbox">
+                    <span class='muted'>Support for messages and channels coming soon.</span>
+                    <!--<input type="checkbox" id="actions-messages" data-name="actionsMessages" checked> Notify of messages-->
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+      </div>
+      <div id="push"></div>
+    </div>
+
+
+    <footer>
+      <div class="container">
+        <p class="muted credit">
+          Built by <a href="https://alpha.app.net/abraham">@abraham</a> to help make <a href="https://app.net">App.net</a> more awesomesauce.
+          Check out the <a href="https://chrome.google.com/webstore/detail/hngjfhijhmcechdkbgopbgghajokogdi">Chrome Web Store page</a> and the <a href="https://github.com/abraham/succynct">Source code</a>.
+        </p>
+      </div>
+    </footer>
+
+
+    <script src="/libs/jquery-min.js"></script>
+    <script src="/libs/underscore-min.js"></script>
+    <script src="/libs/backbone-min.js"></script>
+    <script src="/libs/bootstrap.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/accounts.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/views/options.js"></script>
+    <script src="/js/options.js"></script>
+
+
+  </body>
+</html>

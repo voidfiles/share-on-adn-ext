@@ -1,0 +1,37 @@
+{
+  "name": "Share on ADN",
+  "version": "2013.3.25",
+  "manifest_version": 2,
+  "description": "A tool to collect pieces of the web into your App.net file storage",
+  "icons": {
+    "16": "img/fleur-de-lis.png",
+    "48": "img/fleur-de-lis.png",
+    "128": "img/fleur-de-lis.png"
+  },
+  "background": {
+    "scripts": [
+      "libs/jquery-min.js",
+      "libs/underscore-min.js",
+      "libs/backbone-min.js",
+      "js/views/notifications.js",
+      "js/views/options.js",
+      "js/views/files.js",
+      "js/views/contextmenu.js",
+      "js/headers.js",
+      "js/config.js",
+      "js/accounts.js",
+      "js/app.js",
+      "js/background.js"
+    ]
+  },
+  "minimum_chrome_version": "23",
+  "options_page": "options.html",
+  "permissions": [
+    "https://*.app.com/*",
+    "<all_urls>",
+    "notifications",
+    "tabs",
+    "storage",
+    "contextMenus"
+  ]
+}
